@@ -123,8 +123,9 @@ h3 {
 }
 
 .stats p span {
-    font-size: 18px++;
+    font-size: 18px;
 }
+
 .transaction-history {
     margin: 40px 10px;
     background-color: #fff;
@@ -168,16 +169,31 @@ h3 {
     display: flex;
     flex-direction: column;
 }
+
 .records span#time {
     color: #717171;
     font-size: 12px;
 }
-.records i.delete{
+
+.records i.delete {
     margin-left: 15px;
     color: #082032;
     cursor: pointer;
     font-size: 18px;
-} 
-.records i.delete:hover{
+}
+
+.records i.delete:hover {
     color: #b42b51;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: none;
 }
