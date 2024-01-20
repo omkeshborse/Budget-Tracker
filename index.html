@@ -18,9 +18,9 @@
                     <p class="title">Budget Tracker</p>
                     <p class="subtitle">Easy way to Track Your Transaction</p>
                 </section>
-                <section class="trasaction-control">
+                <section class="transaction-control">
                     <div class="actions">
-                        <h3>add transactions</h3>
+                        <h3>add transaction</h3>
                         <form class="add">
                             <input type="text" placeholder="source" name="source" autocapitalize="off">
                             <input type="number" placeholder="amount" name="amount" autocapitalize="off">
@@ -42,31 +42,33 @@
                 </section>
                 <section class="transaction-history">
                     <h3>transactions history</h3>
-                    <div class="income">
-                        <h3>Income</h3>
-                        <ul class="income-list">
-                            <li>
-                                <p>
-                                    <span>Freelancing -JS project</span>
-                                    <span>Fri Jan 19 2024 18:15:10</span>
-                                </p>
-                                <span>$700</span>
-                                <i class="bi bi-trash delete"></i>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="expense">
-                        <h3>Expense</h3>
-                        <ul class="expense-list">
-                            <li>
-                                <p>
-                                    <span>Streaming Room</span>
-                                    <span>Fri Jan 19 2024 18:15:10</span>
-                                </p>
-                                <span>$49</span>
-                                <i class="bi bi-trash delete"></i>
-                            </li>
-                        </ul>
+                    <div class="records">
+                        <div class="income">
+                            <h3>Income</h3>
+                            <ul class="income-list">
+                                <li>
+                                    <p>
+                                        <span>Freelancing -JS project</span>
+                                        <span id="time">Fri Jan 19 2024 18:15:10</span>
+                                    </p>
+                                    <span>$700</span>
+                                    <i class="bi bi-trash delete"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="expense">
+                            <h3>Expense</h3>
+                            <ul class="expense-list">
+                                <li>
+                                    <p>
+                                        <span>Streaming Room</span>
+                                        <span id="time">Fri Jan 19 2024 18:15:10</span>
+                                    </p>
+                                    <span>$49</span>
+                                    <i class="bi bi-trash delete"></i>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
 
