@@ -68,7 +68,10 @@ function addTransactions(source, amount) {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  addTransactions(form.source.value, form.amount.value);
+  if (form.source.value.trim() === "" || form.amount.value === "") {
+  return alert("please add proper values!")
+  }
+  addTransactions(form.source.value.trim(), form.amount.value);
   updateStatistics();
   form.reset();
 });
@@ -121,4 +124,4 @@ function init() {
   getTransactions();
 }
 
-init() ;
+init();
