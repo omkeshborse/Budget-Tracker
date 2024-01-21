@@ -7,7 +7,7 @@ let transactions =
     ? JSON.parse(localStorage.getItem("transactions"))
     : [];
 
-function generateTemplate(id, source, time, amount) {
+function generateTemplate(id, source, amount, time) {
   return ` <li data-id="${id}">
                 <p>
                   <span>${source}</span>
@@ -17,13 +17,14 @@ function generateTemplate(id, source, time, amount) {
                   <i class="bi bi-trash delete"></i>
             </li>`;
 }
+
 function addTransactionsDom(id, source, amount, time) {
   if (amount > 0) {
     //add in income list
-    incomeList.innerHTML += generateTemplate(id, source, time, amount);
+    incomeList.innerHTML += generateTemplate(id, source, amount, time);
   } else {
     //add in expenseList
-    expenseList.innerHTML += generateTemplate(id, source, time, amount);
+    expenseList.innerHTML += generateTemplate(id, source, amount, time);
   }
 }
 
@@ -46,3 +47,25 @@ form.addEventListener("submit", (e) => {
   addTransactions(form.source.value, form.amount.value);
   form.reset();
 });
+
+function getTransactions() {
+  transactions.forEach((transaction) => {
+    if (transaction.amount > 0) {
+      incomeList.innerHTML += generateTemplate(
+        transaction.id,
+        transaction.source,
+        transaction.amount,
+        transaction.time
+      );
+    } else {
+      expenseList.innerHTML += generateTemplate(
+        transaction.id,
+        transaction.source,
+        transaction.amount,
+        transaction.time
+      );
+    }
+  });
+}
+
+getTransactions();
