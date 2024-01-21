@@ -69,3 +69,24 @@ function getTransactions() {
 }
 
 getTransactions();
+
+// delete transactions
+
+function deleteTransaction(id) {
+  transactions = transactions.filter((transaction) => {
+    return transaction.id !== parseInt(id) ;
+  });
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+}
+incomeList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete")) {
+    e.target.parentElement.remove();
+    deleteTransaction(e.target.parentElement.dataset.id);
+  }
+});
+expenseList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete")) {
+    e.target.parentElement.remove();
+    deleteTransaction(e.target.parentElement.dataset.id);
+  }
+});
